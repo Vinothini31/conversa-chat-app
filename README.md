@@ -16,11 +16,11 @@ Conversa is a full-stack AI chatbot web application that enables real-time conve
 ## 🏗️ Tech Stack
 | Component | Technology |
 |----------|-------------|
-| Frontend | React, HTML, CSS, JavaScript, Axios |
+| Frontend | React, CSS, JavaScript, Axios |
 | Backend | Node.js, Express.js |
 | Database | MongoDB, Mongoose |
 | Authentication | JWT |
-| AI Model | OpenAI / Gemini API |
+| AI Model |  Gemini API |
 
 ---
 
