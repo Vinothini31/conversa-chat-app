@@ -1,7 +1,11 @@
 import axios from "axios";
 
+const isProduction = process.env.NODE_ENV === "production";
+
 const api = axios.create({
-  baseURL: "https://conversa-chatapp.onrender.com/api",
+  baseURL: isProduction
+    ? "https://conversa-chatapp.onrender.com/api"   // 🔵 Render backend
+    : "http://localhost:5000/api",                 // 🟢 Local backend
 });
 
 // Add token automatically
@@ -11,13 +15,9 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// ----------------------
-//  CHAT API FUNCTIONS
-// ----------------------
-
 // Get all chat history
 export const getHistory = async () => {
-  return api.get("/chat/history"); // GET /api/chat/history
+  return api.get("/chat/history");
 };
 
 // Send a message to AI
